@@ -1,0 +1,41 @@
+﻿@model MVCCrud.Models.MvcCalisanlarModel
+@{
+    ViewBag.Title = "Ekle";
+}
+
+<div class="form-body">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.CalisanID)
+        <div class="form-control" style="background-color:cornflowerblue;">
+            @Html.LabelFor(model => model.AdSoyad)<br />
+            @Html.EditorFor(model => model.AdSoyad)
+            @Html.ValidationMessageFor(model => model.AdSoyad)
+        </div>
+        <div class="form-control" style="background-color: cornflowerblue;">
+            @Html.LabelFor(model => model.Pozisyon)<br />
+            @Html.EditorFor(model => model.Pozisyon)
+            @Html.ValidationMessageFor(model => model.Pozisyon)
+        </div>
+        <div class="form-control" style="background-color: cornflowerblue;">
+            @Html.LabelFor(model => model.Yas)<br />
+            @Html.EditorFor(model => model.Yas)
+            @Html.ValidationMessageFor(model => model.Yas)
+        </div>
+        <div class="form-control" style="background-color: cornflowerblue;">
+            @Html.LabelFor(model => model.Maas)<br />
+            @Html.EditorFor(model => model.Maas)
+            @Html.ValidationMessageFor(model => model.Maas)
+        </div>
+
+        <div class="form-control">
+            <input type="submit"  value="Kaydet" class="btn accordion-button" />
+            <input type="reset"  value="Reset" class="btn accordion-button" />
+        </div>
+    }
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+    }
+
